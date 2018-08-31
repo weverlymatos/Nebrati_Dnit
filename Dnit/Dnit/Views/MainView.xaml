@@ -6,9 +6,16 @@
 			xmlns:viewModelBase="clr-namespace:Dnit.Core.ViewModels.Base;assembly=Dnit.Core"
             xmlns:controls="clr-namespace:Dnit.Core.Controls;assembly=Dnit.Core"
             BackgroundColor="{StaticResource BackgroundColor}"
-            NavigationPage.HasNavigationBar="False"
-            BarTextColor="{StaticResource WhiteColor}"
+            NavigationPage.HasNavigationBar="False"            
 			viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    <TabbedPage.BarTextColor>
+        <OnPlatform x:TypeArguments="Color">
+            <On Platform="iOS" Value="{StaticResource BlueCustomColor}" />
+            <On Platform="Android" Value="{StaticResource WhiteColor}" />
+        </OnPlatform>
+    </TabbedPage.BarTextColor>
+    
+
     <TabbedPage.Title>
         <OnPlatform x:TypeArguments="x:String">
             <On Platform="iOS, UWP, WinRT, WinPhone" Value="Teste Dnit" />

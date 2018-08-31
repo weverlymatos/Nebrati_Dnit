@@ -10,7 +10,11 @@
             <!-- COLORS -->
             <Color x:Key="BlueCustomColor">#2D558F</Color>
             <Color x:Key="GrayCustomColor">#D5D5D5</Color>
-            
+
+            <!-- COLORS -->
+            <Color x:Key="NativeAccentColor">#2D558F</Color>
+            <Color x:Key="NativeLightGreenColor">#2D558F</Color>
+
             <Color x:Key="WhiteColor">#ffffff</Color>
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="BackgroundColor">#F4F6FA</Color>
@@ -23,7 +27,7 @@
             <Color x:Key="TextColor">#757575</Color>
             <Color x:Key="InverseTextColor">#FFFFFF</Color>
             <Color x:Key="LightTextColor">#979797</Color>
-            <Color x:Key="iOSDefaultTintColor">#2D558F</Color>
+            <Color x:Key="iOSDefaultTintColor">#ffffff</Color>
             <Color x:Key="SeparatorLineColor">#D5D5D5</Color>
             <Color x:Key="AndroidDefaultButtonClassBackgroundColor">#C9C9C9</Color>
             <Color x:Key="iOSDefaultButtonClassBackgroundColor">Transparent</Color>

@@ -22,13 +22,13 @@
                     Value="Start" />
             <Setter Property="Margin"
                     Value="12,0" />
-          </Style>
-            <Style x:Key="FilterPickerStyle"  
-             TargetType="{x:Type Picker}">
                 <Setter Property="HeightRequest"
                 Value="48" />
-                <Setter Property="BackgroundColor"
-                Value="Transparent" />
+            </Style>
+            <Style x:Key="FilterEntryStyle"  
+             TargetType="{x:Type Entry}">
+                <Setter Property="HeightRequest"
+                Value="48" />                
                 <Setter Property="HorizontalOptions"
                 Value="Fill" />
                 <Setter Property="VerticalOptions"
@@ -75,23 +75,37 @@
     RowSpacing="0"
     Margin="48, 24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />         
+            <RowDefinition Height="70" />
+            <RowDefinition Height="60" />         
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-      <Label
+        <Label
          Grid.Row="0"
+          
                   Text="Escreva o nome ou parte do nome do produto"
-                  Style="{StaticResource HeaderLabelStyle}" />
+                  Style="{StaticResource HeaderLabelStyle}">
+            <Label.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="iOS, Android" Value="60" />
+                    <On Platform="UWP, WinRT, WinPhone" Value="36" />
+                </OnPlatform>
+            </Label.HeightRequest>
+        </Label>
         <Entry 
            Grid.Row="1"
           Text="{Binding ProductFilter, Mode=TwoWay}">
             <Entry.Style>
                 <OnPlatform x:TypeArguments="Style">
-                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />                    
+                    <On Platform="iOS, Android" Value="{StaticResource FilterEntryStyle}" />                    
                 </OnPlatform>
-            </Entry.Style>                   
+            </Entry.Style>
+            <Entry.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="iOS, Android" Value="48" />
+                    <On Platform="UWP, WinRT, WinPhone" Value="36" />
+                </OnPlatform>
+            </Entry.HeightRequest>
         </Entry>        
         <Button 
       Grid.Row="2"
