@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Dnit.Core.Views.MainView"
+            xmlns:views="clr-namespace:Dnit.Core.Views;assembly=Dnit.Core"
+			xmlns:viewModelBase="clr-namespace:Dnit.Core.ViewModels.Base;assembly=Dnit.Core"
+            xmlns:controls="clr-namespace:Dnit.Core.Controls;assembly=Dnit.Core"
+            BackgroundColor="{StaticResource BackgroundColor}"
+            NavigationPage.HasNavigationBar="False"
+            BarTextColor="{StaticResource WhiteColor}"
+			viewModelBase:ViewModelLocator.AutoWireViewModel="true">
+    <TabbedPage.Title>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="iOS, UWP, WinRT, WinPhone" Value="Teste Dnit" />
+        </OnPlatform>
+    </TabbedPage.Title>
+   
+    <!-- CATALOG -->
+    <views:CatalogView  
+        x:Name="HomeView">
+        <views:CatalogView.Icon > 
+            <OnPlatform x:TypeArguments="FileImageSource">
+
+                <On Platform="iOS, Android" Value="menu_profile" />
+                
+            </OnPlatform>
+        </views:CatalogView.Icon>
+    </views:CatalogView>
+    <!-- PROFILE -->
+    <views:ProfileView  
+        x:Name="LogoutView">
+        <views:ProfileView.Icon>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="iOS, Android" Value="menu_profile2" />                
+            </OnPlatform>
+        </views:ProfileView.Icon>
+    </views:ProfileView>
+
+</TabbedPage>
