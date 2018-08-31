@@ -41,7 +41,7 @@ namespace Dnit.Droid.Activities
             Window window = this.Window;
             window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            window.SetStatusBarColor(Android.Graphics.Color.Rgb(0, 166, 156));
+            window.SetStatusBarColor(Android.Graphics.Color.Rgb(45, 85, 143));
         }
 
         /// <summary>
